@@ -5,13 +5,15 @@ using namespace std;
 int main(){
 	srand(time(NULL));
 	char ch;
-	int dif,sc,n;
+	int dif,sc,n,wr=0;//wr----->(wronginput)
 	cout<<"\t\t\t\t\t\tWelcome to Number Guessing Game "<<endl<<"\t\t\t\t\tIn this Game You have to Guess a number  "<<endl<<"\t\t\t\t\tIf you guess it correctly then You are Winner";
 	cout<<endl<<"****************************************************************************************************************************************************"<<endl;
 	cout<<"Game has Three Difficulty"<<endl<<"1.Hard"<<endl<<"2.Medium"<<endl<<"3.Easy"<<endl;
 	cout<<"Do you want to play game if yes Press Y otherwise N"<<endl;
+	B:
 	cin>>ch;
 	if(ch=='Y'||ch=='y'){
+		A:
 		cout<<"Choose Your Difficulty"<<endl;
 		cin>>dif;
 	}
@@ -19,8 +21,15 @@ int main(){
 		return 0;
 	}
 	else{
-		cout<<endl<<"....................Restart The Game Again.................."<<endl;
-		return 0;
+		wr++;
+		if(wr==3){
+			cout<<endl<<"....................Restart The Game Again.................."<<endl;
+			return 0;
+		}else{
+			cout<<"Enter valid choice"<<endl;
+			goto B;
+		}
+		
 	}
 	switch(dif){
 		case 1:{
@@ -135,7 +144,7 @@ int main(){
 		}while(true);
 	}break;
 	default:cout<<"Enter valid choice"<<endl;
-	break;
+	goto A;
 	}
 	return 0;
 	
