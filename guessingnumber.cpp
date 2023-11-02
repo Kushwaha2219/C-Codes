@@ -11,13 +11,19 @@ int main(){
 	cout<<"Game has Three Difficulty"<<endl<<"1.Hard"<<endl<<"2.Medium"<<endl<<"3.Easy"<<endl;
 	cout<<"Do you want to play game if yes Press Y otherwise N"<<endl;
 	cin>>ch;
-	if(ch=='N'||ch=='n'){
+	if(ch=='Y'||ch=='y'){
+		cout<<"Choose Your Difficulty"<<endl;
+		cin>>dif;
+	}
+	else if(ch=='N'||ch=='N'){
 		return 0;
 	}
-	if(ch=='Y'||ch=='y')
-	cout<<"Choose Your Difficulty"<<endl;
-	cin>>dif;
-	if(dif==1){
+	else{
+		cout<<endl<<"....................Restart The Game Again.................."<<endl;
+		return 0;
+	}
+	switch(dif){
+		case 1:{
 		int chance=5;
 		system("cls");
 		cout<<"You have 5 chance to guess the number between 1 to 100"<<endl;
@@ -53,7 +59,9 @@ int main(){
 			}
 		}while(true);
 	}
-	if(dif==2){
+	break;
+	case 2:
+	{
 		int chance=10;
 		system("cls");
 		cout<<"You have 10 chance to guess the number between 1 to 100"<<endl;
@@ -86,8 +94,10 @@ int main(){
 				break;
 			}
 		}while(true);
+		
 	}
-	if(dif==3){
+	break;
+	case 3:{
 		int chance=15;
 		system("cls");
 		cout<<"You have 10 chance to guess the number between 1 to 100"<<endl;
@@ -123,6 +133,9 @@ int main(){
 			}
 			
 		}while(true);
+	}break;
+	default:cout<<"Enter valid choice"<<endl;
+	break;
 	}
 	return 0;
 	
