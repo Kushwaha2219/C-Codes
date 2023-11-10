@@ -80,7 +80,7 @@ void KheloIndia(){
 }
 int main(){
 	int ch;
-	KheloIndia();
+	KheloIndia();// calling Function Khelo India 
 	
 	while(1){
 		cout<<"Do you want to Play Again--If yes press 1 otherwise Press 0 for exit"<<endl;
